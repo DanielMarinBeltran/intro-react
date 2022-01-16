@@ -1,5 +1,8 @@
 import React from "react";
 import { TodoCounter } from "./TodoCounter";
+import { TodoSearch } from "./TodoSearch";
+import { TodoItem } from "./TodoItem";
+import { TodoList } from "./TodoList";
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -13,16 +16,16 @@ function App() {
   return (
     <React.Fragment>
       <TodoCounter />
-      <TodoSearch />
-      <TodoList >
+      <TodoSearch/>
+      <TodoList>
         {todos.map(todo => (
-          <TodoItem />
+          <TodoItem  key={todo.text} text ={todo.text}/>
         ))}
-      </TodoList >
-      <CreateTodoButtom />
+      </TodoList>
+      {/* {<CreateTodoButtom />} */}
       <button>+</button>
     </React.Fragment>
-    );
+  );
 }
 
 export default App;
